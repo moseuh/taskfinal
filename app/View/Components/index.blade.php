@@ -1,0 +1,21 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>Your Tasks</h1>
+    <div class="row">
+        @foreach ($tasks as $task)
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $task->title }}</h5>
+                        <p class="card-text">{{ $task->description }}</p>
+                        <p class="card-text">Deadline: {{ $task->deadline }}</p>
+                        <p class="card-text">Status: {{ $task->status }}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+@endsection
